@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface PokemonList {
-  results?: any;
   name: string;
   url: string;
 }

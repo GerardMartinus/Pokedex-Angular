@@ -2,7 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from './services/pokemons.service';
 
 interface Pokemon {
-  species: { name: string };
+  name: string;
+  sprites: {
+    back_default: string | null;
+    back_female: string | null;
+    back_shiny: string | null;
+    back_shiny_female: string | null;
+    front_default: string | null;
+    front_female: string | null;
+    front_shiny: string | null;
+    front_shiny_female: string | null;
+  };
 }
 
 @Component({
@@ -19,9 +29,10 @@ export class AppComponent implements OnInit {
     this.pokeService.getPokemons().subscribe((pokemonsList: any) => {
       data = pokemonsList.results;
       data.map((pokemon: { name: string; url: string }) => {
-        this.pokeService
-          .getPokemonInfo(pokemon.name)
-          .subscribe((pokemon) => this.pokemons.push(pokemon));
+        this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
+          this.pokemons.push(pokemon);
+          console.log(pokemon);
+        });
       });
     });
   }
