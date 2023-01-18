@@ -16,9 +16,15 @@
                         <h2 class="fw-bold text-capitalize">{{ pokemon.name }}</h2>
                     </h5>
                     <p class="card-text text-capitalize fs-5" *ngFor="let type of pokemon.types; let i = index">
-                        {{pokemon.types[i].type.name}}</p>
+                        {{ pokemon.types[i].type.name }}</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li *ngFor="let page of maxPages" [ngClass]="active === page ? 'active' : ''" class="page-item"><a class="page-link" href="#" (click)="changePage(page)">{{ page + 1 }}</a></li>
+        </ul>
+    </nav>
 </div>
