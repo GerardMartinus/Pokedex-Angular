@@ -1,15 +1,4 @@
 <Menu></Menu>
-<div *ngIf="pokemons.length > 0">
-  <div>
-    <div *ngFor="let pokemon of pokemons">
-      <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
-      <h2>{{ pokemon.name }}</h2>
-    </div>
-  </div>
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li *ngFor="let page of maxPages" [ngClass]="active === page ? 'active' : ''" class="page-item"><a class="page-link" href="#" (click)="changePage(page)">{{ page + 1 }}</a></li>
-    </ul>
-  </nav>
-</div>
+<section class="display-pokemons">
+  <Pokemons></Pokemons>
+</section>

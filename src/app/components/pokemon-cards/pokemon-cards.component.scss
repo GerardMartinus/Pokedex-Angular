@@ -1,0 +1,14 @@
+.pokemon-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  text-align: center;
+  .pokemon {
+    margin: 0.3rem;
+
+    .card {
+      height: 100%;
+    }
+  }
+}
