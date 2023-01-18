@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
       this.data.results.map((pokemon: { name: string; url: string }) => {
         this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
           this.pokemons.push(pokemon);
-          console.log(pokemon);
         });
       });
     });
