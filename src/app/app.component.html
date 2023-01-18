@@ -1,9 +1,4 @@
 <Menu></Menu>
-<div *ngIf="pokemons.length > 0">
-  <div>
-    <div *ngFor="let pokemon of pokemons">
-      <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
-      <h2>{{ pokemon.name }}</h2>
-    </div>
-  </div>
-</div>
+<section class="display-pokemons">
+  <Pokemons></Pokemons>
+</section>
