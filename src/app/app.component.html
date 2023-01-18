@@ -6,4 +6,10 @@
       <h2>{{ pokemon.name }}</h2>
     </div>
   </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li *ngFor="let page of maxPages" [ngClass]="active === page ? 'active' : ''" class="page-item"><a class="page-link" href="#" (click)="changePage(page)">{{ page + 1 }}</a></li>
+    </ul>
+  </nav>
 </div>

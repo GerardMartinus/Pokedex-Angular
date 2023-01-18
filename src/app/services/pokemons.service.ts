@@ -13,8 +13,10 @@ export interface PokemonList {
 export class PokemonsService {
   private apiUrl = 'https://pokeapi.co/api/v2';
 
-  getPokemons(): Observable<PokemonList[]> {
-    return this.http.get<PokemonList[]>(`${this.apiUrl}/pokemon`);
+  getPokemons(page: number): Observable<PokemonList[]> {
+    return this.http.get<PokemonList[]>(
+      `${this.apiUrl}/pokemon/?offset=${page * 2 * 10}&limit=20`
+    );
   }
 
   getPokemonInfo(pokemon: string): Observable<any> {

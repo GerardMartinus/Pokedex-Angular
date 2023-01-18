@@ -13,6 +13,7 @@ interface Pokemon {
     front_shiny: string | null;
     front_shiny_female: string | null;
   };
+  types: [{ type: { name: string } }];
 }
 
 @Component({
@@ -23,12 +24,34 @@ interface Pokemon {
 export class AppComponent implements OnInit {
   title = 'pokedex';
   pokemons: Pokemon[] = [];
+  data: any = [];
+  maxPages: number[];
+  active = 0;
 
   ngOnInit() {
-    let data: any = [];
-    this.pokeService.getPokemons().subscribe((pokemonsList: any) => {
-      data = pokemonsList.results;
-      data.map((pokemon: { name: string; url: string }) => {
+    this.pokeService.getPokemons(0).subscribe((pokemonsList: any) => {
+      this.data = pokemonsList;
+      this.maxPages = Array.from(
+        Array(Math.trunc(this.data.count / 20)).keys()
+      );
+      this.data.results.map((pokemon: { name: string; url: string }) => {
+        this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
+          this.pokemons.push(pokemon);
+          console.log(pokemon);
+        });
+      });
+    });
+  }
+
+  changePage(page: number) {
+    this.pokemons = [];
+    this.active = page;
+    this.pokeService.getPokemons(page).subscribe((pokemonsList: any) => {
+      this.data = pokemonsList;
+      this.maxPages = Array.from(
+        Array(Math.trunc(this.data.count / 20)).keys()
+      );
+      this.data.results.map((pokemon: { name: string; url: string }) => {
         this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
           this.pokemons.push(pokemon);
           console.log(pokemon);
