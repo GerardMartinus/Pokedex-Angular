@@ -26,6 +26,7 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
   maxPages: number[];
   active = 0;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  colorsList: any[] = [];
 
   ngOnInit() {
     this.pokeService
@@ -33,14 +34,18 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe((pokemonsList) => {
         this.data = pokemonsList;
-        console.log(this.data);
         this.maxPages = Array.from(
           Array(Math.trunc(this.data.count / 20)).keys()
         );
         this.data.results.map((pokemon: Pokemon) => {
-          this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
-            this.pokemons.push(pokemon);
-          });
+          this.pokeService
+            .getPokemonInfo(pokemon.name)
+            .subscribe((pokemon: Pokemon) => {
+              this.pokeService
+                .getPokemonColor(pokemon.species.url)
+                .subscribe((req: any) => this.colorsList.push(req.color.name));
+              this.pokemons.push(pokemon);
+            });
         });
       });
   }

@@ -19,5 +19,9 @@ export class PokemonsService {
     return this.http.get<any>(`${this.apiUrl}/pokemon/${pokemon}`);
   }
 
+  getPokemonColor(speciesUrl: string) {
+    return this.http.get(`${speciesUrl}`);
+  }
+
   constructor(private http: HttpClient) {}
 }
