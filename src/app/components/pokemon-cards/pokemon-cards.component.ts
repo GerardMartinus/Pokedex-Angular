@@ -1,29 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from '../../services/pokemons.service';
+import { Pokemon } from '../../Interface/pokemon'
 
-interface Pokemon {
-  id: number;
-  name: string;
-  sprites: {
-    back_default: string | null;
-    back_female: string | null;
-    back_shiny: string | null;
-    back_shiny_female: string | null;
-    front_default: string | null;
-    front_female: string | null;
-    front_shiny: string | null;
-    front_shiny_female: string | null;
-  };
-  types: { type: { name: string } }[];
-}
 
 @Component({
   selector: 'Pokemons',
   templateUrl: './pokemon-cards.component.html',
   styleUrls: ['./pokemon-cards.component.scss']
 })
-export class PokemonCardsComponent implements OnInit{
+export class PokemonCardsComponent implements OnInit {
 
+  selectedId: number | null;
+
+  shiny(id: number) {
+
+    this.selectedId = id;
+
+  }
+
+  default(id: number){
+
+    if(this.selectedId = id){
+      this.selectedId = null;
+    }
+
+  }
+
+
+
+
+
+
+
+
+  // is_shiny: boolean = false;
+
+  // 
 
   title = 'pokedex';
   pokemons: Pokemon[] = [];

@@ -1,8 +1,15 @@
 <div *ngIf="pokemons.length > 0">
     <div class="pokemon-cards">
         <div class="pokemon" *ngFor="let pokemon of pokemons">
-            <div class="card ${pokemon.types[0]}" style="width: 18rem;">
-                <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
+            <div class="card" style="width: 18rem;">
+                <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)"
+                    src="{{ pokemon.sprites.front_default }}" *ngIf="selectedId !== pokemon.id"
+                    alt="{{ pokemon.name + pokemon.sprites.front_default }}">
+
+                <img id="{{ pokemon.id }}" (click)="default(pokemon.id)"
+                    src="{{ pokemon.sprites.front_shiny }}" *ngIf="selectedId === pokemon.id"
+                    alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
+
                 <div class="card-body">
                     <h5 class="card-title">
                         <h4 class="text-secondary">nº{{ pokemon.id }}</h4>
