@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, take, takeUntil } from 'rxjs';
-import { Pokemon } from 'src/app/interface/pokemon';
+import { Pokemon } from 'src/app/Interface/pokemon';
 import { PokemonsService } from '../../services/pokemons.service';
 
 @Component({
@@ -9,6 +9,17 @@ import { PokemonsService } from '../../services/pokemons.service';
   styleUrls: ['./pokemon-cards.component.scss'],
 })
 export class PokemonCardsComponent implements OnInit, OnDestroy {
+  selectedId: number | null;
+
+  shiny(id: number) {
+    this.selectedId = id;
+  }
+
+  default(id: number) {
+    if (this.selectedId == id) {
+      this.selectedId = null;
+    }
+  }
   title = 'pokedex';
   pokemons: Pokemon[] = [];
   data: any = [];
@@ -26,7 +37,7 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
         this.maxPages = Array.from(
           Array(Math.trunc(this.data.count / 20)).keys()
         );
-        this.data.results.map((pokemon: { name: string; url: string }) => {
+        this.data.results.map((pokemon: Pokemon) => {
           this.pokeService.getPokemonInfo(pokemon.name).subscribe((pokemon) => {
             this.pokemons.push(pokemon);
           });

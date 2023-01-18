@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
-import { Pokemon } from 'src/app/interface/pokemon';
+import { Pokemon } from 'src/app/Interface/pokemon';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
@@ -12,11 +13,15 @@ export class PokeInfoComponent implements OnInit {
   pokemon: Pokemon;
 
   ngOnInit(): void {
+    const name = this.route.snapshot.paramMap.get('name');
     this.pokeService
-      .getPokemonInfo('pikachu')
+      .getPokemonInfo(name!)
       .pipe(take(1))
       .subscribe((pokemon) => (this.pokemon = pokemon));
   }
 
-  constructor(private pokeService: PokemonsService) {}
+  constructor(
+    private pokeService: PokemonsService,
+    private route: ActivatedRoute
+  ) {}
 }
