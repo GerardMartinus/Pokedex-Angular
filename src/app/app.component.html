@@ -1,1 +1,9 @@
 <Menu></Menu>
+<div *ngIf="pokemons.length > 0">
+  <ul>
+    <li *ngFor="let pokemon of pokemons">
+      <h2>{{ pokemon.species.name }}</h2>
+    </li>
+  </ul>
+
+</div>
