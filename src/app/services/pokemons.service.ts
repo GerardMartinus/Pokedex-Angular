@@ -1,11 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-export interface PokemonList {
-  name: string;
-  url: string;
-}
+import { PokeRequisition } from '../interface/pokemon';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +9,8 @@ export interface PokemonList {
 export class PokemonsService {
   private apiUrl = 'https://pokeapi.co/api/v2';
 
-  getPokemons(page: number): Observable<PokemonList[]> {
-    return this.http.get<PokemonList[]>(
+  getPokemons(page: number): Observable<PokeRequisition[]> {
+    return this.http.get<PokeRequisition[]>(
       `${this.apiUrl}/pokemon/?offset=${page * 2 * 10}&limit=20`
     );
   }
