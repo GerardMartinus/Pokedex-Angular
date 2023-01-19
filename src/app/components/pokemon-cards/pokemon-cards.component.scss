@@ -69,7 +69,6 @@ $fairy: #d685ad;
 
     .card {
       height: 100%;
-      @include type-bg-color(#{pokemonType});
 
       .card-bottom {
         display: flex;
