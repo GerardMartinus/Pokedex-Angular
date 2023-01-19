@@ -11,6 +11,18 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 })
 export class PokeInfoComponent implements OnInit {
   pokemon: Pokemon;
+  selectedId: number | null;
+
+
+  shiny(id: number) {
+    this.selectedId = id;
+  }
+
+  default(id: number) {
+    if (this.selectedId == id) {
+      this.selectedId = null;
+    }
+  }
 
   ngOnInit(): void {
     const name = this.route.snapshot.paramMap.get('name');

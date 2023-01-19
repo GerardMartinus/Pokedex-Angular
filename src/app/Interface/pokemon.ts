@@ -12,8 +12,10 @@ export interface Pokemon {
     front_shiny_female: string | null;
   };
   types: { type: { name: string } }[];
-  species: { name: string; url: string };
+  species: { name: string; url: string};
   color: string;
+  height: number;
+  weight: number;
 }
 
 export interface PokeRequisition {

@@ -1,3 +1,78 @@
 <div *ngIf="pokemon">
-  <h1>{{ pokemon.name }}</h1>
+
+  <div class="title">
+    <h2 class="text-capitalize fs-1">{{ pokemon.name }} </h2>
+    <h2 class="text-secondary fs-1">Nº {{ pokemon.id }}</h2>
+  </div>
+
+  <div class="pokemon-info">
+    <div class="img-pokemon border border-white rounded-circle" [ngStyle]="{
+      'background-color': 
+      pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
+      (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
+      (pokemon.types[0].type.name === 'grass' ? '#7AC74C' :
+      (pokemon.types[0].type.name === 'normal' ? '#A8A77A' :
+      (pokemon.types[0].type.name === 'electric' ? '#F7D02C' : 
+      (pokemon.types[0].type.name === 'ice' ? '#96D9D6' :
+      (pokemon.types[0].type.name === 'fighting' ? '#C22E28' :
+      (pokemon.types[0].type.name === 'poison' ? '#A33EA1' :
+      (pokemon.types[0].type.name === 'ground' ? '#E2BF65' :
+      (pokemon.types[0].type.name === 'flying' ? '#A98FF3' :
+      (pokemon.types[0].type.name === 'psychic' ? '#F95587' :
+      (pokemon.types[0].type.name === 'bug' ? '#A6B91A' :
+      (pokemon.types[0].type.name === 'rock' ? '#B6A136' :
+      (pokemon.types[0].type.name === 'ghost' ? '#735797' :
+      (pokemon.types[0].type.name === 'dark' ? '#6F35FC' :
+      (pokemon.types[0].type.name === 'dragon' ? '#705746': 
+      (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
+      (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
+
+      <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)" src="{{ pokemon.sprites.front_default }}"
+        *ngIf="selectedId !== pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
+
+      <img id="{{ pokemon.id }}" (click)="default(pokemon.id)" src="{{ pokemon.sprites.front_shiny }}"
+        *ngIf="selectedId === pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
+
+    </div>
+    <div class="pokemon-description">
+      <p class="pokemon-description-text" *ngFor="let type of pokemon.types; index as i">
+        {{ pokemon.types[i].type.name}}</p>
+      <div class="atributes" 
+      [ngStyle]="{
+        'background-color': 
+        pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
+        (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
+        (pokemon.types[0].type.name === 'grass' ? '#7AC74C' :
+        (pokemon.types[0].type.name === 'normal' ? '#A8A77A' :
+        (pokemon.types[0].type.name === 'electric' ? '#F7D02C' : 
+        (pokemon.types[0].type.name === 'ice' ? '#96D9D6' :
+        (pokemon.types[0].type.name === 'fighting' ? '#C22E28' :
+        (pokemon.types[0].type.name === 'poison' ? '#A33EA1' :
+        (pokemon.types[0].type.name === 'ground' ? '#E2BF65' :
+        (pokemon.types[0].type.name === 'flying' ? '#A98FF3' :
+        (pokemon.types[0].type.name === 'psychic' ? '#F95587' :
+        (pokemon.types[0].type.name === 'bug' ? '#A6B91A' :
+        (pokemon.types[0].type.name === 'rock' ? '#B6A136' :
+        (pokemon.types[0].type.name === 'ghost' ? '#735797' :
+        (pokemon.types[0].type.name === 'dark' ? '#6F35FC' :
+        (pokemon.types[0].type.name === 'dragon' ? '#705746': 
+        (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
+        (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}"
+      >
+
+        <div class="atributes-height">
+          <h4>Height</h4>
+          <p>{{ pokemon.height }}</p>
+        </div>
+
+        <div class="atributes-weight">
+          <h4>Weight</h4>
+          <p>{{ pokemon.weight }}</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
 </div>
