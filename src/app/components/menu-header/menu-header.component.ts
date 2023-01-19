@@ -11,9 +11,12 @@ export class MenuHeaderComponent {
   onSearch(name: string) {
     this.pokeService
       .getPokemonInfo(name.toLocaleLowerCase())
-      .subscribe((pokemon) =>
-        this.router.navigateByUrl(`/pokemon/${pokemon.name}`)
-      );
+      .subscribe((pokemon) => {
+        this.router.navigateByUrl(`/pokemon/${pokemon.name}`);
+        setTimeout(() => {
+          location.reload();
+        }, 1);
+      });
   }
 
   constructor(private pokeService: PokemonsService, private router: Router) {}

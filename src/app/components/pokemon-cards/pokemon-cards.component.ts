@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, take, takeUntil } from 'rxjs';
+import { Subject, take } from 'rxjs';
 import { Pokemon, PokeRequisition } from 'src/app/Interface/pokemon';
 import { PokemonsService } from '../../services/pokemons.service';
 
@@ -9,25 +9,28 @@ import { PokemonsService } from '../../services/pokemons.service';
   styleUrls: ['./pokemon-cards.component.scss'],
 })
 export class PokemonCardsComponent implements OnInit, OnDestroy {
-  selectedId: number | null;
-
-  pokemonType: string;
-
-  shiny(id: number) {
-    this.selectedId = id;
-  }
-
-  default(id: number) {
-    if (this.selectedId == id) {
-      this.selectedId = null;
-    }
-  }
+  selectedId: number[] = [];
   title = 'pokedex';
   pokemons: Pokemon[] = [];
   data: PokeRequisition;
   maxPages: number[];
   active = 0;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  pokemonType: string;
+
+  shiny(id: number) {
+    this.selectedId!.push(id);
+  }
+
+  default(id: number) {
+    if (this.selectedId.includes(id)) {
+      for (let i = 0; i < this.selectedId.length; i++) {
+        if (this.selectedId[i] === id) {
+          this.selectedId.splice(i, 1);
+        }
+      }
+    }
+  }
 
   getPokeInfo(page: number) {
     this.pokeService
@@ -43,9 +46,7 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
             .getPokemonInfo(pokemon.name)
             .subscribe((pokemon: Pokemon) => {
               this.pokemons.push(pokemon);
-
               this.pokemonType = pokemon.types[0].type.name;
-
             });
         });
       });
@@ -66,5 +67,5 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
-  constructor(private pokeService: PokemonsService) { }
+  constructor(private pokeService: PokemonsService) {}
 }

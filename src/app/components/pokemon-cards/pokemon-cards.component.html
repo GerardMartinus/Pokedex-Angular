@@ -3,7 +3,7 @@
         <div class="pokemon" *ngFor="let pokemon of pokemons">
             <div class="card" style="width: 18rem;" [ngStyle]="{
                 'background-color': 
-                 pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
+                pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
                 (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
                 (pokemon.types[0].type.name === 'grass' ? '#7AC74C' :
                 (pokemon.types[0].type.name === 'normal' ? '#A8A77A' :
@@ -18,15 +18,15 @@
                 (pokemon.types[0].type.name === 'rock' ? '#B6A136' :
                 (pokemon.types[0].type.name === 'ghost' ? '#735797' :
                 (pokemon.types[0].type.name === 'dark' ? '#6F35FC' :
-                (pokemon.types[0].type.name === 'dragon' ? '#7o5746': 
+                (pokemon.types[0].type.name === 'dragon' ? '#705746': 
                 (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
                 (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
 
                 <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)" src="{{ pokemon.sprites.front_default }}"
-                    *ngIf="selectedId !== pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
+                    *ngIf="selectedId.includes(pokemon.id) === false" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
 
                 <img id="{{ pokemon.id }}" (click)="default(pokemon.id)" src="{{ pokemon.sprites.front_shiny }}"
-                    *ngIf="selectedId === pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
+                    *ngIf="selectedId.includes(pokemon.id)" alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
 
                 <div class="card-body">
                     <h5 class="card-title">
@@ -64,9 +64,9 @@
         </div>
     </div>
 
-    <!-- <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li *ngFor="let page of maxPages" [ngClass]="active === page ? 'active' : ''" class="page-item"><a class="page-link" href="#" (click)="changePage(page)">{{ page + 1 }}</a></li>
+          <li *ngFor="let page of maxPages" [ngClass]="active === page ? 'active' : ''" class="page-item"><a role="button" class="page-link" (click)="changePage(page)">{{ page + 1 }}</a></li>
         </ul>
-    </nav> -->
+    </nav>
 </div>

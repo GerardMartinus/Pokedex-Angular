@@ -12,7 +12,8 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class PokeInfoComponent implements OnInit {
   pokemon: Pokemon;
   selectedId: number | null;
-
+  weight: number;
+  height: number;
 
   shiny(id: number) {
     this.selectedId = id;
@@ -29,7 +30,11 @@ export class PokeInfoComponent implements OnInit {
     this.pokeService
       .getPokemonInfo(name!)
       .pipe(take(1))
-      .subscribe((pokemon) => (this.pokemon = pokemon));
+      .subscribe((pokemon) => {
+        this.height = pokemon.height / 3.281;
+        this.weight = pokemon.weight / 2.205;
+        this.pokemon = pokemon;
+      });
   }
 
   constructor(

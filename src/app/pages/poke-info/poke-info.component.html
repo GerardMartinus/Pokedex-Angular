@@ -61,13 +61,14 @@
       >
 
         <div class="atributes-height">
-          <h4>Height</h4>
-          <p>{{ pokemon.height }}</p>
+          <h4>Altura</h4>
+          <p *ngIf="+height.toFixed(1) >= 2">{{ height.toFixed(1) + ' Metros'}}</p>
+          <p *ngIf="+height.toFixed(1) < 2">{{ height.toFixed(1) + ' Metro'}}</p>
         </div>
 
         <div class="atributes-weight">
-          <h4>Weight</h4>
-          <p>{{ pokemon.weight }}</p>
+          <h4>Peso</h4>
+          <p>{{ weight.toFixed(1) + ' Quilos'}}</p>
         </div>
 
       </div>
