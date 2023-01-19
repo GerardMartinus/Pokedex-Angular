@@ -45,13 +45,12 @@ $fairy: #D685AD;
   text-align: center;
 
   .pokemon {
+    
     margin: 0.3rem;
 
     .card {
 
       height: 100%;
-      @include type-bg-color(#{pokemonType});
-      
 
       .card-bottom{
         display: flex;

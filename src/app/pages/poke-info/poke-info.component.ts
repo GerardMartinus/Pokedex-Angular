@@ -13,7 +13,6 @@ export class PokeInfoComponent implements OnInit {
   pokemon: Pokemon;
   selectedId: number | null;
 
-
   shiny(id: number) {
     this.selectedId = id;
   }
@@ -35,5 +34,5 @@ export class PokeInfoComponent implements OnInit {
   constructor(
     private pokeService: PokemonsService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 }

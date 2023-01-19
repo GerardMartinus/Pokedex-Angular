@@ -12,6 +12,8 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
   selectedId: number | null;
 
   pokemonType: string;
+  height: number;
+  weight: number;
 
   shiny(id: number) {
     this.selectedId = id;
