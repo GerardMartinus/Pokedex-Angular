@@ -7,16 +7,6 @@
         </button>
     </div>
     <div class="itens-menu collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link fs-3 text-primary active" aria-current="page" href="#">Pokémons</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fs-3 text-primary active" aria-current="page" href="#">Itens</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fs-3 text-primary active" aria-current="page" href="#">Detalhes</a>
-            </li>
-        </ul>
+        <search (search)="onSearch($event)"></search>
     </div>
 </nav>
