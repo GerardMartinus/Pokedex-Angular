@@ -8,6 +8,8 @@ import { PokemonCardsComponent } from './components/pokemon-cards/pokemon-cards.
 import { PokeInfoComponent } from './pages/poke-info/poke-info.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,14 @@ import { HomeComponent } from './pages/home/home.component';
     PokemonCardsComponent,
     PokeInfoComponent,
     HomeComponent,
+    SearchComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
