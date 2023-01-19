@@ -11,6 +11,8 @@ import { PokemonsService } from '../../services/pokemons.service';
 export class PokemonCardsComponent implements OnInit, OnDestroy {
   selectedId: number | null;
 
+  pokemonType: string;
+
   shiny(id: number) {
     this.selectedId = id;
   }
@@ -41,6 +43,9 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
             .getPokemonInfo(pokemon.name)
             .subscribe((pokemon: Pokemon) => {
               this.pokemons.push(pokemon);
+
+              this.pokemonType = pokemon.types[0].type.name;
+
             });
         });
       });
@@ -61,5 +66,5 @@ export class PokemonCardsComponent implements OnInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
-  constructor(private pokeService: PokemonsService) {}
+  constructor(private pokeService: PokemonsService) { }
 }

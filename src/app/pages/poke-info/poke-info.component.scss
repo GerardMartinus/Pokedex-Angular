@@ -4,7 +4,56 @@ app-poke-info {
   align-items: center;
 }
 
-h1 {
-  font-size: 2rem;
-  color: red;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 0;
+  gap: 5rem;
+}
+
+
+.pokemon-info {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 2rem;
+
+  margin: 0 5rem;
+}
+
+.img-pokemon {
+
+  background-color: #999;
+
+  img {
+    width: 30rem;
+  }
+
+  .pokemon-description {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.atributes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1rem;
+
+  width: 20vw;
+  height: 20vh;
+
+  gap: 6rem;
+
+  .atributes-height{
+    text-align: center;
+  }
+
+  .atributes-weight{
+    text-align: center;
+  }
 }

@@ -9,6 +9,9 @@ export interface Pokemon {
   };
   types: { type: { name: string } }[];
   species: { name: string; url: string };
+  color: string;
+  height: number;
+  weight: number;
 }
 
 export interface PokeRequisition {
