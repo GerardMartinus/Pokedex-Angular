@@ -1,8 +1,7 @@
 <div *ngIf="pokemons.length > 0">
     <div class="pokemon-cards">
         <div class="pokemon" *ngFor="let pokemon of pokemons">
-            <div class="card" style="width: 18rem;"
-            [ngStyle]="{
+            <div class="card" style="width: 18rem;" [ngStyle]="{
                 'background-color': 
                  pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
                 (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
@@ -21,8 +20,8 @@
                 (pokemon.types[0].type.name === 'dark' ? '#6F35FC' :
                 (pokemon.types[0].type.name === 'dragon' ? '#7o5746': 
                 (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
-                (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}"
-            >
+                (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
+
                 <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)" src="{{ pokemon.sprites.front_default }}"
                     *ngIf="selectedId !== pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
 
