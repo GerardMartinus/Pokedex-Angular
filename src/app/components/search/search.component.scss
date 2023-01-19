@@ -1,0 +1,15 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.search-container{
+    display: flex;
+    gap: 1rem;
+    width: 50vw;
+}
+
+input{
+    padding: 0 1rem;
+}
