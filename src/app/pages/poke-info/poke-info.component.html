@@ -1,12 +1,55 @@
 <div *ngIf="pokemon">
 
-  <div class="title">
-    <h2 class="text-capitalize fs-1">{{ pokemon.name }} </h2>
-    <h2 class="text-secondary fs-1">Nº {{ pokemon.id }}</h2>
-  </div>
+  <main class="pokemon-background" [ngStyle]="{
+      'background-image': 
+      pokemon.types[0].type.name ===  'fire' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/59239705-5ebf-4a7a-9dee-5dd305685980/d6yvaif-89d501e8-b8ff-4f63-843b-c43968411656.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU5MjM5NzA1LTVlYmYtNGE3YS05ZGVlLTVkZDMwNTY4NTk4MFwvZDZ5dmFpZi04OWQ1MDFlOC1iOGZmLTRmNjMtODQzYi1jNDM5Njg0MTE2NTYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yV51WIsT_MWdlQ4RxBIHOeesALnkFiP9PKXkltuWfLo)' : 
+      (pokemon.types[0].type.name === 'water' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d83ohf3-7f911e73-0d36-4f31-94f9-e620fd0163c6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDgzb2hmMy03ZjkxMWU3My0wZDM2LTRmMzEtOTRmOS1lNjIwZmQwMTYzYzYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.wxRac84v_EgyrvePWQOUDa7MFXoplmVXtL0_ENPNTpo)' : 
+      (pokemon.types[0].type.name === 'grass' ? 'url(https://pixahive.com/wp-content/uploads/2021/02/green-grass-effect-background-336011-pixahive.jpg)' :
+      (pokemon.types[0].type.name === 'normal' ? 'url(http://pm1.narvii.com/7243/f2fb9db8191078f72c8b98fee93155c56e6e8674r1-673-421v2_uhq.jpg)' :
+      (pokemon.types[0].type.name === 'electric' ? 'url(https://static.vecteezy.com/system/resources/previews/014/536/729/original/yellow-gradient-line-shape-background-abstract-eps-free-vector.jpg)' : 
+      (pokemon.types[0].type.name === 'ice' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d85jk85-38ec6987-8e11-49f8-a6af-8cf85bf53e17.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg1ams4NS0zOGVjNjk4Ny04ZTExLTQ5ZjgtYTZhZi04Y2Y4NWJmNTNlMTcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.JP2JHaX-FHhmKtD9-xux7zOUxhWAEVJqAbrGsmPTOJA)' :
+      (pokemon.types[0].type.name === 'fighting' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d87xqqk-6d3fa10d-23c7-45c3-97ec-2dae72096f6f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg3eHFxay02ZDNmYTEwZC0yM2M3LTQ1YzMtOTdlYy0yZGFlNzIwOTZmNmYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Ggq_gG0Z4Qk2AcfuyT99nc_EAQDMTsm5SPBPE1UEXiM)' :
+      (pokemon.types[0].type.name === 'poison' ? 'url(https://www.gameovercancer.ca/backgrounds/Poison.png)' :
+      (pokemon.types[0].type.name === 'ground' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d88d1yo-10af7b20-6c71-4504-94bd-d31152129ec5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg4ZDF5by0xMGFmN2IyMC02YzcxLTQ1MDQtOTRiZC1kMzExNTIxMjllYzUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gXLimxcUtOUcfNZBQKsrxQ9ZB92wSJuXlhd8O6lJ2K0)' :
+      (pokemon.types[0].type.name === 'flying' ? 'url(https://i.pinimg.com/originals/3f/51/fe/3f51fea2bc775e6968014504aada2919.png)' :
+      (pokemon.types[0].type.name === 'psychic' ? 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlyvbBTqcr5ULHpFVqoedEz9UQ6xvDJk1cUg&usqp=CAU)' :
+      (pokemon.types[0].type.name === 'bug' ? 'url(https://pm1.narvii.com/7243/0d2736d705781ea116d08621abbfefae60a971c2r1-700-542v2_hq.jpg)' :
+      (pokemon.types[0].type.name === 'rock' ? 'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d88dppi-abb490e2-f5fe-4ce3-ba01-ecd3bb46bd42.png/v1/fill/w_800,h_480,q_80,strp/or_as_battle_background_8__jagged_path__by_phoenixoflight92_d88dppi-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDgwIiwicGF0aCI6IlwvZlwvMmZiMjgyMWEtMTQwNi00YTFkLTliMDQtNjY2OGYyNzhlOTQ0XC9kODhkcHBpLWFiYjQ5MGUyLWY1ZmUtNGNlMy1iYTAxLWVjZDNiYjQ2YmQ0Mi5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.hGX5iJEyWk4HPvmVaXxXIvblpEUJVECxKGbWQvB6kyc)' :
+      (pokemon.types[0].type.name === 'ghost' ? 'url(https://pbs.twimg.com/media/D0SxscNUcAABqE9.jpg)' :
+      (pokemon.types[0].type.name === 'dark' ? 'url(https://pm1.narvii.com/7243/0ea89cf278223e13003a6897d3091b7d99271cf6r1-688-475v2_hq.jpg)' :
+      (pokemon.types[0].type.name === 'dragon' ? 'url(https://pm1.narvii.com/7243/adcbbe4c769bbaf0858abef9625077294911804br1-593-534v2_hq.jpg)': 
+      (pokemon.types[0].type.name === 'steel' ? 'url(https://pm1.narvii.com/7243/bc538f6da74b633d36b48108ddd07b7a2410a2afr1-650-498v2_hq.jpg)' :
+      (pokemon.types[0].type.name === 'fairy' ? 'url(https://pm1.narvii.com/7243/61770aa4b0259c06cd4b1fa490007c29e27d6683r1-663-565v2_hq.jpg)' : 
+      'initial')))))))))))))))))}">
 
-  <div class="pokemon-info">
-    <div class="img-pokemon border border-white rounded-circle" [ngStyle]="{
+    <div class="title py-3 mb-5"
+    [ngStyle]="{
+      'background-color': 
+      pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
+      (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
+      (pokemon.types[0].type.name === 'grass' ? '#7AC74C' :
+      (pokemon.types[0].type.name === 'normal' ? '#A8A77A' :
+      (pokemon.types[0].type.name === 'electric' ? '#F7D02C' : 
+      (pokemon.types[0].type.name === 'ice' ? '#96D9D6' :
+      (pokemon.types[0].type.name === 'fighting' ? '#C22E28' :
+      (pokemon.types[0].type.name === 'poison' ? '#A33EA1' :
+      (pokemon.types[0].type.name === 'ground' ? '#E2BF65' :
+      (pokemon.types[0].type.name === 'flying' ? '#A98FF3' :
+      (pokemon.types[0].type.name === 'psychic' ? '#F95587' :
+      (pokemon.types[0].type.name === 'bug' ? '#A6B91A' :
+      (pokemon.types[0].type.name === 'rock' ? '#B6A136' :
+      (pokemon.types[0].type.name === 'ghost' ? '#735797' :
+      (pokemon.types[0].type.name === 'dark' ? '#6F35FC' :
+      (pokemon.types[0].type.name === 'dragon' ? '#705746': 
+      (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
+      (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}"
+    >
+      <h2 class="text-capitalize text-light fs-1">{{ pokemon.name }} </h2>
+      <h2 class="text-secondary text-dark fs-1">Nº {{ pokemon.id }}</h2>
+    </div>
+
+    <div class="pokemon-info">
+      <div class="img-pokemon border border-white rounded-circle" [ngStyle]="{
       'background-color': 
       pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
       (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
@@ -27,19 +70,19 @@
       (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
       (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
 
-      <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)" src="{{ pokemon.sprites.front_default }}"
-        *ngIf="selectedId !== pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
+        <img id="{{ pokemon.id }}" (click)="shiny(pokemon.id)" src="{{ pokemon.sprites.front_default }}"
+          *ngIf="selectedId !== pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_default }}">
 
-      <img id="{{ pokemon.id }}" (click)="default(pokemon.id)" src="{{ pokemon.sprites.front_shiny }}"
-        *ngIf="selectedId === pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
+        <img id="{{ pokemon.id }}" (click)="default(pokemon.id)" src="{{ pokemon.sprites.front_shiny }}"
+          *ngIf="selectedId === pokemon.id" alt="{{ pokemon.name + pokemon.sprites.front_shiny }}">
 
-    </div>
-    <div class="pokemon-description">
+      </div>
+      <div class="pokemon-description">
 
-      <div class="pokemon-types">
+        <div class="pokemon-types">
 
-        <p class="pokemon-types-text text-capitalize" *ngFor="let type of pokemon.types; index as i"
-        [ngStyle]="{ 'background-color': 
+          <p class="pokemon-types-text text-dark fw-bold text-capitalize" *ngFor="let type of pokemon.types; index as i"
+            [ngStyle]="{ 'background-color': 
            pokemon.types[i].type.name === 'fire' ? '#EE8130' : 
           (pokemon.types[i].type.name === 'water' ? '#6390F0' : 
           (pokemon.types[i].type.name === 'grass' ? '#7AC74C' :
@@ -58,11 +101,11 @@
           (pokemon.types[i].type.name === 'dragon' ? '#705746': 
           (pokemon.types[i].type.name === 'steel' ? '#B7B7CE' :
           (pokemon.types[i].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
-          {{ pokemon.types[i].type.name}}</p>
+            {{ pokemon.types[i].type.name}}</p>
 
-      </div>
+        </div>
 
-      <div class="atributes " [ngStyle]="{
+        <div class="atributes " [ngStyle]="{
         'background-color': 
         pokemon.types[0].type.name === 'fire' ? '#EE8130' : 
         (pokemon.types[0].type.name === 'water' ? '#6390F0' : 
@@ -83,20 +126,22 @@
         (pokemon.types[0].type.name === 'steel' ? '#B7B7CE' :
         (pokemon.types[0].type.name === 'fairy' ? '#D685AD' : 'initial')))))))))))))))))}">
 
-        <div class="atributes-height">
-          <h4>Altura</h4>
-          <p *ngIf="+height.toFixed(1) >= 2">{{ height.toFixed(1) + ' Metros'}}</p>
-          <p *ngIf="+height.toFixed(1) < 2">{{ height.toFixed(1) + ' Metro'}}</p>
-        </div>
+          <div class="atributes-height">
+            <h4>Altura</h4>
+            <p *ngIf="+height.toFixed(1) >= 2">{{ height.toFixed(1) + ' Metros'}}</p>
+            <p *ngIf="+height.toFixed(1) < 2">{{ height.toFixed(1) + ' Metro'}}</p>
+          </div>
 
-        <div class="atributes-weight">
-          <h4>Peso</h4>
-          <p>{{ weight.toFixed(1) + ' Quilos'}}</p>
-        </div>
+          <div class="atributes-weight">
+            <h4>Peso</h4>
+            <p>{{ weight.toFixed(1) + ' Quilos'}}</p>
+          </div>
 
+        </div>
       </div>
+
     </div>
 
-  </div>
+  </main>
 
 </div>

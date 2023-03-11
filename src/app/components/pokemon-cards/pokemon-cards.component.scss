@@ -1,61 +1,61 @@
-@mixin type-bg-color($type) {
-  @if $type == "fire" {
-    background-color: #ee8130;
-  } @else if $type == "water" {
-    background-color: #6390f0;
-  } @else if $type == "grass" {
-    background-color: #7ac74c;
-  } @else if $type == "normal" {
-    background-color: #a8a77a;
-  } @else if $type == "electric" {
-    background-color: #f7d02c;
-  } @else if $type == "ice" {
-    background-color: #96d9d6;
-  } @else if $type == "fighting" {
-    background-color: #c22e28;
-  } @else if $type == "poison" {
-    background-color: #a33ea1;
-  } @else if $type == "ground" {
-    background-color: #e2bf65;
-  } @else if $type == "flying" {
-    background-color: #a98ff3;
-  } @else if $type == "psychic" {
-    background-color: #f95587;
-  } @else if $type == "bug" {
-    background-color: #a6b91a;
-  } @else if $type == "rock" {
-    background-color: #b6a136;
-  } @else if $type == "ghost" {
-    background-color: #735797;
-  } @else if $type == "dark" {
-    background-color: #6f35fc;
-  } @else if $type == "dragon" {
-    background-color: #705746;
-  } @else if $type == "steel" {
-    background-color: #b7b7ce;
-  } @else if $type == "fairy" {
-    background-color: #d685ad;
-  }
-}
+// @mixin type-bg-color($type) {
+//   @if $type == "fire" {
+//     background-color: #ee8130;
+//   } @else if $type == "water" {
+//     background-color: #6390f0;
+//   } @else if $type == "grass" {
+//     background-color: #7ac74c;
+//   } @else if $type == "normal" {
+//     background-color: #a8a77a;
+//   } @else if $type == "electric" {
+//     background-color: #f7d02c;
+//   } @else if $type == "ice" {
+//     background-color: #96d9d6;
+//   } @else if $type == "fighting" {
+//     background-color: #c22e28;
+//   } @else if $type == "poison" {
+//     background-color: #a33ea1;
+//   } @else if $type == "ground" {
+//     background-color: #e2bf65;
+//   } @else if $type == "flying" {
+//     background-color: #a98ff3;
+//   } @else if $type == "psychic" {
+//     background-color: #f95587;
+//   } @else if $type == "bug" {
+//     background-color: #a6b91a;
+//   } @else if $type == "rock" {
+//     background-color: #b6a136;
+//   } @else if $type == "ghost" {
+//     background-color: #735797;
+//   } @else if $type == "dark" {
+//     background-color: #6f35fc;
+//   } @else if $type == "dragon" {
+//     background-color: #705746;
+//   } @else if $type == "steel" {
+//     background-color: #b7b7ce;
+//   } @else if $type == "fairy" {
+//     background-color: #d685ad;
+//   }
+// }
 
-$fire: #ee8130;
-$water: #6390f0;
-$grass: #7ac74c;
-$normal: #a8a77a;
-$electric: #f7d02c;
-$ice: #96d9d6;
-$fighting: #c22e28;
-$poison: #a33ea1;
-$ground: #e2bf65;
-$flying: #a98ff3;
-$psychic: #f95587;
-$bug: #a6b91a;
-$rock: #b6a136;
-$ghost: #735797;
-$dark: #6f35fc;
-$dragon: #705746;
-$steel: #b7b7ce;
-$fairy: #d685ad;
+// $fire: #ee8130;
+// $water: #6390f0;
+// $grass: #7ac74c;
+// $normal: #a8a77a;
+// $electric: #f7d02c;
+// $ice: #96d9d6;
+// $fighting: #c22e28;
+// $poison: #a33ea1;
+// $ground: #e2bf65;
+// $flying: #a98ff3;
+// $psychic: #f95587;
+// $bug: #a6b91a;
+// $rock: #b6a136;
+// $ghost: #735797;
+// $dark: #6f35fc;
+// $dragon: #705746;
+// $steel: #b7b7ce;
+// $fairy: #d685ad;
 
 .pokemon-cards {
   display: flex;

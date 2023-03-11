@@ -1,9 +1,9 @@
 <form [formGroup]="searchForm" (ngSubmit)="search.emit(searchForm.value.pokeName)">
     <label for="pokeSearch" class="fw-bold">Pesquisar</label>
     <div class="search-container">
-        <input type="text" id="pokeSearch" class="w-100 rounded bg-primary" placeholder="Digite o nome do Pokémon"
+        <input type="text" id="pokeSearch" class="w-100 rounded bg-dark" placeholder="Digite o nome do Pokémon"
             formControlName="pokeName">
-        <button class="bg-warning">
+        <button class="bg-light">
             <svg version="1.1" fill="#000" height="30" width="30" id="XMLID_305_" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
                 <g id="SVGRepo_iconCarrier">

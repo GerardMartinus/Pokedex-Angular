@@ -1,7 +1,16 @@
+
+
 app-poke-info {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pokemon-background{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .title {
@@ -9,7 +18,6 @@ app-poke-info {
   justify-content: center;
   align-items: center;
 
-  margin: 2rem 0;
   gap: 5rem;
 }
 
@@ -72,6 +80,7 @@ app-poke-info {
     text-align: center;
   }
 }
+
 
 @media only screen and (max-width: 900px) {
   .pokemon-info {

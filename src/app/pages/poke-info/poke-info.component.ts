@@ -15,6 +15,25 @@ export class PokeInfoComponent implements OnInit {
   weight: number;
   height: number;
 
+  // fire = getComputedStyle(document.documentElement).getPropertyValue('--fire')
+  // water = getComputedStyle(document.documentElement).getPropertyValue('--water')
+  // grass = getComputedStyle(document.documentElement).getPropertyValue('--grass')
+  // normal = getComputedStyle(document.documentElement).getPropertyValue('--normal')
+  // electric = getComputedStyle(document.documentElement).getPropertyValue('--electric')
+  // ice = getComputedStyle(document.documentElement).getPropertyValue('--ice')
+  // fighting = getComputedStyle(document.documentElement).getPropertyValue('--fighting')
+  // poison = getComputedStyle(document.documentElement).getPropertyValue('--poison')
+  // ground = getComputedStyle(document.documentElement).getPropertyValue('--ground')
+  // flying = getComputedStyle(document.documentElement).getPropertyValue('--flying')
+  // psychic = getComputedStyle(document.documentElement).getPropertyValue('--psychic')
+  // bug = getComputedStyle(document.documentElement).getPropertyValue('--bug')
+  // rock = getComputedStyle(document.documentElement).getPropertyValue('--rock')
+  // ghost = getComputedStyle(document.documentElement).getPropertyValue('--ghost')
+  // dark = getComputedStyle(document.documentElement).getPropertyValue('--dark')
+  // dragon = getComputedStyle(document.documentElement).getPropertyValue('--dragon')
+  // steel = getComputedStyle(document.documentElement).getPropertyValue('--steel')
+  // fairy = getComputedStyle(document.documentElement).getPropertyValue('--fairy')
+
   shiny(id: number) {
     this.selectedId = id;
   }
@@ -40,5 +59,5 @@ export class PokeInfoComponent implements OnInit {
   constructor(
     private pokeService: PokemonsService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 }
